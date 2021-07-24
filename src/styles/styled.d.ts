@@ -12,6 +12,10 @@ declare module 'styled-components' {
     },
     font: {
       size: string;
+      family: {
+        sans: string;
+        mono: string;
+      }
     }
   }
 }

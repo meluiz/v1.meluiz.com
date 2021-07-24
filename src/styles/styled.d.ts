@@ -6,24 +6,9 @@ declare module 'styled-components' {
     colors: {
       title: string,
       background: string,
-      red: {
-        default: string,
-        lighter: string,
-        light: string,
-        dark: string,
-      },
-      blue: {
-        default: string,
-        lighter: string,
-        light: string,
-        dark: string,
-      },
-      yellow: {
-        default: string,
-        lighter: string,
-        light: string,
-        dark: string,
-      }
+      error: string,
+      info: string,
+      warn: string
     },
     font: {
       size: string;

@@ -1,15 +1,42 @@
+import React from 'react'
+import cookie from 'js-cookie'
+
 /* ------| Contextos |------ */
 import { ThemeProvider } from 'styled-components'
+import { SwitchThemeContext } from '../src/contexts/SwitchTheme'
+
+/* ------| Temas |------ */
+import { DarkTheme } from '../src/styles/themes/dark'
+import { LightTheme } from '../src/styles/themes/light'
 
 /* ------| Estilos |------ */
-import { DarkTheme } from '../src/styles/themes/dark'
 import '../src/styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
+  const [ theme, setTheme ] = React.useState(DarkTheme)
+  
+  React.useEffect(() => {
+    const themeStorage = cookie.get('theme')
+    if (!themeStorage) cookie.set('theme', 'dark')
+    
+    setTheme(() => (themeStorage === 'light') ? LightTheme : DarkTheme)
+
+  }, [])
+
+  React.useEffect(() => {
+    cookie.set('theme', theme.title)
+  }, [ theme ])
+
+  const SwitchTheme = () => {
+    setTheme(theme => theme.title === 'dark' ? LightTheme : DarkTheme)
+  }
+
   return (
-    <ThemeProvider theme={ DarkTheme }>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SwitchThemeContext.Provider value={{ SwitchTheme }}>
+      <ThemeProvider theme={ theme }>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SwitchThemeContext.Provider>
   )
 }
 

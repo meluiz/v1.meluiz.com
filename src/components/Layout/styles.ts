@@ -29,7 +29,6 @@ export const Area = styled.div<AreaProps>`
   padding: 0 24px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 `
 
 export const GridLayout = styled.div<GridLayoutProps>`

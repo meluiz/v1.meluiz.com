@@ -16,8 +16,10 @@ interface ContainerProps {
 
 interface GridProps {
   children?: React.ReactNode;
-  direction?: 'row' | 'column';
+  column?: boolean;
   gap?: number;
+  align?: 'left' | 'center' | 'right';
+  justify?: 'left' | 'center' | 'right' | 'between';
 }
 
 
@@ -42,13 +44,13 @@ export const Container = ({ children, fluid = false, size }: ContainerProps) => 
   )
 }
 
-export const Grid = ({ children, gap, direction = 'row' }: GridProps) => {
+export const Grid = ({ children, gap, column = false, align, justify }: GridProps) => {
   const style = {
-    '--gap': `${gap ? gap : 24}px`
+    '--gap': `${gap !== undefined ? gap : 24}px`
   } as React.CSSProperties
 
   return (
-    <GridLayout direction={direction} style={style}>
+    <GridLayout column={column} align={align} justify={justify} style={style}>
       { children }
     </GridLayout>
   )

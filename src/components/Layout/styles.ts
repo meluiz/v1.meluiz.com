@@ -6,7 +6,9 @@ interface AreaProps {
 }
 
 interface GridLayoutProps {
-  direction?: 'row' | 'column';
+  column?: boolean;
+  align?: 'left' | 'center' | 'right';
+  justify?: 'left' | 'center' | 'right' | 'between';
 }
 
 export const Base = styled.div`
@@ -16,51 +18,49 @@ export const Base = styled.div`
   position: relative;
   overflow: hidden;
   overflow-y: auto;
-  background: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.background.main};
 `
 
 export const Area = styled.div<AreaProps>`
   width: 100%;
-  ${props => {
-    switch (props.size) {
-      case 'sm':
-        return css`
-          max-width: 640px;
-        `
-      case 'md':
-        return css`
-          max-width: 768px;
-        `
-      case 'lg':
-        return css`
-          max-width: 1024px;
-        `
-      case 'xl':
-        return css`
-          max-width: 1280px;
-        `
-      case '2xl':
-        return css`
-          max-width: 1536px;
-        `
-      default:
-        return css`
-          max-width: 1024px;
-        `
-    }
-  }};
+  max-width: ${(props) => props.size ? props.theme.screens.lg : props.theme.screens[props.size]};
   ${props => props.fluid && 'height: 100%;'}
-  margin: 0 auto;
   display: block;
+  padding: 0 24px;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 `
 
 export const GridLayout = styled.div<GridLayoutProps>`
   display: flex;
-  flex-direction: ${props => props.direction};
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+  align-items: ${ (props) => {
+    switch (props.align) {
+      case 'left':
+        return 'flex-start'
+      case 'center':
+        return 'center'
+      case 'right':
+        return 'flex-end'
+      default:
+        return 'flex-start'
+    }
+  }};
+  justify-content:  ${ (props) => {
+    switch (props.justify) {
+      case 'left':
+        return 'flex-start'
+      case 'center':
+        return 'center'
+      case 'right':
+        return 'flex-end'
+      case 'between':
+        return 'space-between'
+      default:
+        return 'flex-start'
+    }
+  }};
   gap: var(--gap);
 `
 

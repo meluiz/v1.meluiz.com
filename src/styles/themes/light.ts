@@ -1,5 +1,5 @@
-export const DarkTheme = {
-  title: 'dark',
+export const LightTheme = {
+  title: 'light',
   screens: {
     xs: '480px',
     sm: '640px',
@@ -33,20 +33,20 @@ export const DarkTheme = {
       darker: '#ccaa5a'
     },
     text: {
-      title: '#f3f2f3',
-      subtitle: '#aaa9aa',
-      link: '#e8e7e7',
-      paragraph: '#8c8987',
+      title: '#2d2925',
+      subtitle: '#373430',
+      link: '#37748c',
+      paragraph: '#4c4a47',
       tone: {
-        one: '#e8e7e7',
-        two: '#d1d0cf',
-        three: '#bab8b7',
-        four: '#a3a19f',
-        five: '#8c8987'
+        one: '#423f3c',
+        two: '#4c4a47',
+        three: '#565452',
+        four: '#615f5e',
+        five: '#6b6a69'
       },
     },
     background: {
-      main: '#0A0806'
+      main: '#fff'
     }
   },
   font: {

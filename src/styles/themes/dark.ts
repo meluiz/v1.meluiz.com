@@ -46,7 +46,8 @@ export const DarkTheme = {
       },
     },
     background: {
-      main: '#0A0806'
+      main: '#0A0806',
+      card: '#110F0D',
     }
   },
   font: {

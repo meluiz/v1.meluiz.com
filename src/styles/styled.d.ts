@@ -49,7 +49,8 @@ declare module 'styled-components' {
         },
       },
       background: {
-        main: string
+        main: string,
+        card: string
       }
     },
     font: {

@@ -46,7 +46,8 @@ export const LightTheme = {
       },
     },
     background: {
-      main: '#fff'
+      main: '#fff',
+      card: '#c3c3c3'
     }
   },
   font: {

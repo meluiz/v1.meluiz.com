@@ -34,9 +34,9 @@ export const Area = styled.div<AreaProps>`
 
 export const GridLayout = styled.div<GridLayoutProps>`
   display: flex;
-  flex-direction: ${props => props.column ?
-    props.responsive ? 'row' : 'column'
-  : 'row'};
+  flex-direction: ${props => props.responsive ?
+    props.column ? 'row' : 'column'
+  : props.column ? 'column' : 'row'};
   align-items: ${ (props) => {
     switch (props.align) {
       case 'left':
@@ -65,8 +65,8 @@ export const GridLayout = styled.div<GridLayoutProps>`
   }};
   gap: var(--gap);
 
-  @media (max-width: ${props => props.theme.screens.lg}) {
-    flex-direction: ${props => props.responsive ? 
+  @media (min-width: ${props => props.theme.screens.lg}) {
+    flex-direction: ${props => props.responsive ?
       props.column ? 'column' : 'row'
     : props.column ? 'column' : 'row'};
   }

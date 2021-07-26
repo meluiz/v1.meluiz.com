@@ -73,5 +73,8 @@ export const GridLayout = styled.div<GridLayoutProps>`
 `
 
 export const ColumnLayout = styled.div`
+  max-width: 100%;
   flex: var(--flex);
+  position: relative;
+  overflow-x: hidden;
 `

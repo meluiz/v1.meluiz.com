@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
       <Container fluid size="lg">
         <ThemeSelector icon={title === 'dark' ? <Sun /> : <Moon />} />
-        <Grid>
+        <Grid responsive>
           <Column>
             <Grid column gap={0}>
               <Title>

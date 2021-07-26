@@ -1,4 +1,5 @@
 import React from 'react'
+import { CSSProperties } from 'styled-components'
 
 /* ------| Estilos |------ */
 import { Base, Area, GridLayout, ColumnLayout } from './styles'
@@ -27,6 +28,7 @@ interface GridProps {
 interface ColumnProps {
   children?: React.ReactNode;
   flex?: number;
+  styles?: CSSProperties;
 }
 
 export const Wrapper = ({ children }: WrapperProps) => {
@@ -57,9 +59,10 @@ export const Grid = ({ children, gap, column, responsive, align, justify }: Grid
   )
 }
 
-export const Column = ({ children, flex }: ColumnProps) => {
+export const Column = ({ children, flex, styles }: ColumnProps) => {
   const style = {
-    '--flex': flex ? flex : 1
+    '--flex': flex ? flex : 1,
+    ...styles
   } as React.CSSProperties
 
   return (

@@ -68,7 +68,7 @@ export const GridLayout = styled.div<GridLayoutProps>`
   @media (max-width: ${props => props.theme.screens.lg}) {
     flex-direction: ${props => props.responsive ? 
       props.column ? 'column' : 'row'
-    : props.column ? 'column' : 'row'}};
+    : props.column ? 'column' : 'row'};
   }
 `
 

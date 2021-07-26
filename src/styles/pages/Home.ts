@@ -5,6 +5,7 @@ export const LinkBio = styled.a`
   align-items: center;
   text-decoration: none;
   padding: 8px 0;
+  margin: 12px 0;
   color: ${props => props.theme.colors.text.link};
   font-size: ${props => props.theme.font.size.md};
   font-family: ${props => props.theme.font.family.sans};

@@ -1,3 +1,5 @@
+import { githubConnect } from "../src/services/github"
+import { GetStaticProps } from "next"
 import React from "react"
 import Head from "next/head"
 import Link from "next/link"
@@ -10,12 +12,14 @@ import { ThemeSelector } from "../src/components/ThemeSelector"
 import { Column, Container, Grid, Wrapper } from "../src/components/Layout/intex"
 import { Title } from "../src/components/Text"
 import { LinkBio } from "../src/styles/pages/Home"
+import { Card } from "../src/components/RepoCard"
 
 /* ------| Estilos |------ */
-import { Link2, Moon, Sun } from "react-feather"
+import { Dribbble, Link2, Moon, Sun } from "react-feather"
 import { Paragraph } from "../src/components/Text/styles"
 
-export default function Home() {
+
+export default function Home({ repos }) {
   const { title } = React.useContext(ThemeContext)
 
   return (
@@ -23,7 +27,22 @@ export default function Home() {
       <Head>
         <title>Luiz Felipe</title>
       </Head>
-      <Container fluid size="lg">
+      <a href="https://dribbble.com/shots/9809111-Developer-Dark-Grid-Portfolio" target="_blank" title="Credits" style={{
+        width: '40px',
+        height: '40px',
+        borderRadius: 999,
+        display: 'flex',
+        alignItems: 'center',
+        position: 'fixed',
+        bottom: 24, right: 32,
+        justifyContent: 'center',
+        color: 'white',
+        background: 'rgb(234,76,137)',
+        boxShadow: '0 3px 4px rgba(0,0,0,.3)'
+      }} rel="noreferrer">
+        <Dribbble size={32} />
+      </a>
+      <Container size="lg">
         <ThemeSelector icon={title === 'dark' ? <Sun /> : <Moon />} />
         <Grid responsive>
           <Column>
@@ -42,19 +61,46 @@ export default function Home() {
               </div>
             </Grid>
             <Grid justify="right">
-              <Link href="/" passHref>
+              {/* <Link href="/bio" passHref>
                 <LinkBio>
                   <Link2 size={18} strokeWidth={2.3} />
                   Ver biografia
                 </LinkBio>
-              </Link>
+              </Link> */}
             </Grid>
           </Column>
           <Column>
-            Olá
+            <Grid gap={0}>
+              <Column>
+                { repos && repos.map((repo) => {
+                  if (!repo.private && repo.name !== 'meluiz') {
+                    return (
+                      <Card
+                        title={repo.name}
+                        desc={repo.description}
+                        lang={repo.language}
+                        url={repo.url}
+                        stars={repo.stargazers_count}
+                      />
+                    )
+                  } 
+                })}
+              </Column>
+            </Grid>
           </Column>
         </Grid>
       </Container>
     </Wrapper>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+
+  const response = await githubConnect.get('/users/meluiz/repos')
+
+  return {
+    props : {
+      repos: response.data
+    }
+  }
 }

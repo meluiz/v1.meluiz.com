@@ -24,7 +24,7 @@ export const Base = styled.div`
 
 export const Area = styled.div<AreaProps>`
   width: 100%;
-  max-width: ${(props) => props.size ? props.theme.screens.lg : props.theme.screens[props.size]};
+  max-width: ${(props) => props.size ? props.theme.screens[props.size] : props.theme.screens.lg};
   ${props => props.fluid && 'height: 100%;'}
   display: block;
   padding: 0 24px;

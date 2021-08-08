@@ -18,10 +18,10 @@ export const ThemeSelector = ({ icon }: BarProps) => {
   return (
     <Base>
       <div>
-        <Link href="">
+        <Link href="https://codepen.io/meluiz" target="_blank">
           <Codepen />
         </Link>
-        <Link href="">
+        <Link href="https://github.com/meluiz" target="_blank">
           <GitHub />
         </Link>
       </div>

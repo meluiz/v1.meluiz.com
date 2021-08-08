@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://discord.com/invite/fTacV8shZ6">
+    <img src="https://i.imgur.com/rSfbHTj.png" width="128">
+  </a>
+</p>
 
-## Getting Started
+<p align="center">
+Portfólio pessoal com o objetivo de mostrar meus projetos durante minha carreira.
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="">Clique para visitar o projeto</a>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 🔖 Seções e Páginas
+O site é composto por duas seções e uma única página:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Resumo biográfico:** Uma pequena descrição sobre mim.
+- **Projetos:** Apresenta projetos públicos desenvolvidos por min e com links diretos para o gihub.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📃 Tecnologias
+<p align="left">
+  <a aria-label="Next logo" href="https://nextjs.org/">
+    <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
+  </a>
+  <a aria-label="Typescript logo" href="https://www.typescriptlang.org/">
+    <img alt="" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
+  </a>
+  <a aria-label="Discord Server" href="https://discord.gg/fTacV8shZ6">
+    <img alt="" src="https://img.shields.io/badge/meluiz-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white">
+  </a>
+  <a aria-label="Styled Components Logo" href="https://styled-components.com/">
+    <img alt="" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+  </a>
+</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br />
 
-## Learn More
+## 🎉 Autor
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/meluiz">
+        <img src="https://avatars.githubusercontent.com/u/52682525?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <sub>
+          <b>Luiz Felipe</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-To learn more about Next.js, take a look at the following resources:
+## 🌈 Créditos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="left">
+  <a aria-label="Dribble logo" href="https://dribbble.com/shots/9809111-Developer-Dark-Grid-Portfolio">
+    <img src="https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white">
+  </a>
+</p>

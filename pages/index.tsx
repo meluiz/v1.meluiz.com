@@ -90,7 +90,7 @@ export default function Home({ repos }) {
                         title={repo.name}
                         desc={repo.description}
                         lang={repo.language}
-                        url={repo.url}
+                        url={repo.html_url}
                         stars={repo.stargazers_count}
                         key={repo.id}
                       />

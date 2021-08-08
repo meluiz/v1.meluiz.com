@@ -6,6 +6,12 @@ export const Heading1 = styled.h1`
   font-family: ${(props) => props.theme.font.family.sans };
   font-weight: bold;
 `
+export const Heading2 = styled.h2`
+  color: ${(props) => props.theme.colors.text.title };
+  font-size: 32px;
+  font-family: ${(props) => props.theme.font.family.sans };
+  font-weight: bold;
+`
 
 export const Paragraph = styled.p`
   margin-top: 32px;

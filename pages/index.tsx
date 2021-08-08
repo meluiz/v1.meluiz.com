@@ -2,7 +2,6 @@ import { githubConnect } from "../src/services/github"
 import { GetStaticProps } from "next"
 import React from "react"
 import Head from "next/head"
-import Link from "next/link"
 
 /* ------| Contextos |------ */
 import { ThemeContext } from "styled-components"
@@ -15,7 +14,7 @@ import { LinkBio } from "../src/styles/pages/Home"
 import { Card } from "../src/components/RepoCard"
 
 /* ------| Estilos |------ */
-import { Dribbble, Link2, Moon, Sun } from "react-feather"
+import { Dribbble, Moon, Sun } from "react-feather"
 import { Paragraph } from "../src/components/Text/styles"
 
 
@@ -25,6 +24,18 @@ export default function Home({ repos }) {
   return (
     <Wrapper>
       <Head>
+        <meta name="author" content="meluiz#2667" />
+        <meta name="description" content="Portfólio pessoal com o objetivo de mostrar meus projetos durante minha carreira." />
+        <meta name="keywords" content="luiz felipe, luiz, felipe, meluiz, portfolio" />
+
+        <meta property="og:title" content="Luiz Felipe" />
+        <meta property="og:site_name" content="Luiz Felipe" />
+        <meta property="og:description" content="Portfólio pessoal com o objetivo de mostrar meus projetos durante minha carreira." />
+        <meta property="og:image" content="/img/graph/logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+
         <title>Luiz Felipe</title>
       </Head>
       <a href="https://dribbble.com/shots/9809111-Developer-Dark-Grid-Portfolio" target="_blank" title="Credits" style={{

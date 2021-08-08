@@ -81,6 +81,7 @@ export default function Home({ repos }) {
                         lang={repo.language}
                         url={repo.url}
                         stars={repo.stargazers_count}
+                        key={repo.id}
                       />
                     )
                   } 

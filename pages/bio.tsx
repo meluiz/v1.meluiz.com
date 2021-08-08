@@ -9,8 +9,6 @@ import { ThemeContext } from "styled-components"
 import { ThemeSelector } from "../src/components/ThemeSelector"
 import { Column, Container, Grid, Wrapper } from "../src/components/Layout/intex"
 import { Title } from "../src/components/Text"
-import { LinkBio } from "../src/styles/pages/Home"
-import { Card } from "../src/components/ProductCard"
 
 /* ------| Estilos |------ */
 import { Link2, Moon, Sun } from "react-feather"

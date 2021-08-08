@@ -1,10 +1,14 @@
 import React from 'react'
 
 /* ------| Estilos |------ */
-import { Heading1, Paragraph } from './styles'
+import { Heading1, Heading2, Paragraph } from './styles'
 
 /* ------| Interface |------ */
 interface TitleProps {
+  children?: React.ReactNode;
+}
+
+interface SubtitleProps {
   children?: React.ReactNode;
 }
 
@@ -15,6 +19,12 @@ interface ParagraphProps {
 export const Title = ({ children }: TitleProps) => {
   return (
     <Heading1>{ children }</Heading1>
+  )
+}
+
+export const Subtitle = ({ children }: SubtitleProps) => {
+  return (
+    <Heading2>{ children }</Heading2>
   )
 }
 

@@ -7,7 +7,7 @@ import { ThemeContext } from "styled-components"
 
 /* ------| Componentes |------ */
 import { ThemeSelector } from "../src/components/ThemeSelector"
-import { Column, Container, Grid, Wrapper } from "../src/components/Layout/intex"
+import { Column, Container, Grid, Wrapper } from "../src/components/Layout"
 import { Title } from "../src/components/Text"
 
 /* ------| Estilos |------ */

@@ -8,14 +8,15 @@ import { ThemeContext } from "styled-components"
 
 /* ------| Componentes |------ */
 import { ThemeSelector } from "../src/components/ThemeSelector"
-import { Column, Container, Grid, Wrapper } from "../src/components/Layout/intex"
+import { Column, Container, DribbbleProject, Grid, Wrapper } from "../src/components/Layout"
 import { Title } from "../src/components/Text"
 import { LinkBio } from "../src/styles/pages/Home"
 import { Card } from "../src/components/RepoCard"
 
 /* ------| Estilos |------ */
-import { Dribbble, Moon, Sun } from "react-feather"
+import { Moon, Sun } from "react-feather"
 import { Paragraph } from "../src/components/Text/styles"
+import { CardOpacityEffect } from "../src/components/RepoCard/styles"
 
 
 export default function Home({ repos }) {
@@ -38,21 +39,7 @@ export default function Home({ repos }) {
 
         <title>Luiz Felipe</title>
       </Head>
-      <a href="https://dribbble.com/shots/9809111-Developer-Dark-Grid-Portfolio" target="_blank" title="Credits" style={{
-        width: '40px',
-        height: '40px',
-        borderRadius: 999,
-        display: 'flex',
-        alignItems: 'center',
-        position: 'fixed',
-        bottom: 24, right: 32,
-        justifyContent: 'center',
-        color: 'white',
-        background: 'rgb(234,76,137)',
-        boxShadow: '0 3px 4px rgba(0,0,0,.3)'
-      }} rel="noreferrer">
-        <Dribbble size={32} />
-      </a>
+      <DribbbleProject />
       <Container size="lg">
         <ThemeSelector icon={title === 'dark' ? <Sun /> : <Moon />} />
         <Grid responsive>
@@ -83,20 +70,22 @@ export default function Home({ repos }) {
           <Column>
             <Grid gap={0}>
               <Column>
-                { repos && repos.map((repo) => {
-                  if (!repo.private && repo.name !== 'meluiz') {
-                    return (
-                      <Card
-                        title={repo.name}
-                        desc={repo.description}
-                        lang={repo.language}
-                        url={repo.html_url}
-                        stars={repo.stargazers_count}
-                        key={repo.id}
-                      />
-                    )
-                  } 
-                })}
+                <CardOpacityEffect>
+                  { repos && repos.map((repo) => {
+                    if (!repo.private && repo.name !== 'meluiz') {
+                      return (
+                        <Card
+                          title={repo.name}
+                          desc={repo.description}
+                          lang={repo.language}
+                          url={repo.html_url}
+                          stars={repo.stargazers_count}
+                          key={repo.id}
+                        />
+                      )
+                    } 
+                  })}
+                </CardOpacityEffect>
               </Column>
             </Grid>
           </Column>

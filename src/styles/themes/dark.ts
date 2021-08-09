@@ -11,6 +11,7 @@ export const DarkTheme = {
   },
   colors: {
     transparent: 'transparent',
+    shadow: 'inset 0 -18px 12px #0A0806',
     error: {
       lighter: '#dd5a56',
       light: '#d94642',

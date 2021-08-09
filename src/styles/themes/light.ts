@@ -11,6 +11,7 @@ export const LightTheme = {
   },
   colors: {
     transparent: 'transparent',
+    shadow: 'inset 0 -18px 12px #e8e7e7',
     error: {
       lighter: '#dd5a56',
       light: '#d94642',
@@ -46,8 +47,8 @@ export const LightTheme = {
       },
     },
     background: {
-      main: '#fff',
-      card: '#c3c3c3'
+      main: '#e8e7e7',
+      card: '#ffffff'
     }
   },
   font: {

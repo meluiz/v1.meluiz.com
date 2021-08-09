@@ -14,6 +14,7 @@ declare module 'styled-components' {
     },
     colors: {
       transparent: string,
+      shadow: string,
       error: {
         lighter: string,
         light: string,

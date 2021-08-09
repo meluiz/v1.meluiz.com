@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const CardOpacityEffect = styled.div`
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    & > a {
+      opacity: .3;
+    }
+  }
+`
+
 export const CardBase = styled.a`
   width: 100%;
   display: flex;
@@ -12,7 +22,12 @@ export const CardBase = styled.a`
   text-decoration: none;
   background-color: ${props => props.theme.colors.background.card};
   margin-bottom: 12px;
+  transition: all 300ms ease;
+
   &:hover {
+    opacity: 1 !important;
+    transform: scale(1.05);
+
     & > div > div {
       background-position: 0 -957px;
     }

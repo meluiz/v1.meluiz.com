@@ -10,7 +10,7 @@ import { DarkTheme } from '../src/styles/themes/dark'
 import { LightTheme } from '../src/styles/themes/light'
 
 /* ------| Estilos |------ */
-import '../src/styles/globals.css'
+import { GlobalStyle } from '../src/styles/themes/globals'
 
 function MyApp({ Component, pageProps }) {
   const [ theme, setTheme ] = React.useState(DarkTheme)
@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <SwitchThemeContext.Provider value={{ SwitchTheme }}>
       <ThemeProvider theme={ theme }>
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </SwitchThemeContext.Provider>

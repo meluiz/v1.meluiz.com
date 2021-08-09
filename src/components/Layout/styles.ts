@@ -19,7 +19,19 @@ export const Base = styled.div`
   position: relative;
   overflow: hidden;
   overflow-y: auto;
+  padding-bottom: 18px;
   background: ${props => props.theme.colors.background.main};
+
+  &::after {
+    content: '';
+    width: 104%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: ${props => props.theme.colors.shadow};
+  }
 `
 
 export const Area = styled.div<AreaProps>`
@@ -76,5 +88,30 @@ export const ColumnLayout = styled.div`
   max-width: 100%;
   flex: var(--flex);
   position: relative;
-  overflow-x: hidden;
+`
+
+export const DribbbleLink = styled.a`
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 24px; right: 32px;
+  justify-content: center;
+  color: white;
+  background: rgb(234,76,137);
+  box-shadow: 0 3px 4px rgba(0,0,0,.3);
+  animation: bounce 1s infinite;
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 `

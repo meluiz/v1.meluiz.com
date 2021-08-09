@@ -2,7 +2,8 @@ import React from 'react'
 import { CSSProperties } from 'styled-components'
 
 /* ------| Estilos |------ */
-import { Base, Area, GridLayout, ColumnLayout } from './styles'
+import { Base, Area, GridLayout, ColumnLayout, DribbbleLink } from './styles'
+import { Dribbble } from 'react-feather'
 
 /* ------| Interface |------ */
 interface WrapperProps {
@@ -69,5 +70,13 @@ export const Column = ({ children, flex, styles }: ColumnProps) => {
     <ColumnLayout style={style}>
       { children }
     </ColumnLayout>
+  )
+}
+
+export const DribbbleProject = () => {
+  return (
+    <DribbbleLink>
+      <Dribbble size={32} />
+    </DribbbleLink>
   )
 }

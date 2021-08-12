@@ -75,7 +75,7 @@ export const Column = ({ children, flex, styles }: ColumnProps) => {
 
 export const DribbbleProject = () => {
   return (
-    <DribbbleLink>
+    <DribbbleLink href="https://dribbble.com/shots/9809111-Developer-Dark-Grid-Portfolio" target="_blank">
       <Dribbble size={32} />
     </DribbbleLink>
   )

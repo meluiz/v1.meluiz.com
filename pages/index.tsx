@@ -101,7 +101,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props : {
-      repos: response.data
+      repos: response.data.filter(repo => repo.fork !== true)
     }
   }
 }

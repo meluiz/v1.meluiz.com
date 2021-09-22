@@ -1,5 +1,4 @@
 import { githubConnect } from "../src/services/github"
-import { GetStaticProps } from "next"
 import React from "react"
 import Head from "next/head"
 
@@ -95,8 +94,7 @@ export default function Home({ repos }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-
+export const getServerSideProps = async () => {
   const response = await githubConnect.get('/users/meluiz/repos')
 
   return {

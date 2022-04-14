@@ -3,7 +3,9 @@
     <img src="https://i.imgur.com/rSfbHTj.png" width="128">
   </a>
 </p>
-
+<p align="center">
+V1
+</p>
 <p align="center">
 Portfólio pessoal com o objetivo de mostrar meus projetos durante minha carreira.
 </p>

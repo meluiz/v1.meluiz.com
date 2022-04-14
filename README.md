@@ -11,7 +11,7 @@ Portfólio pessoal com o objetivo de mostrar meus projetos durante minha carreir
 </p>
 
 <p align="center">
-  <a href="https://meluiz.com/">Clique para visitar o projeto</a>
+  <a href="https://v1.meluiz.com/">Clique para visitar o projeto</a>
 </p>
 
 ## 🔖 Seções e Páginas

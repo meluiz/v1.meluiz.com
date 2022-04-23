@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://discord.com/invite/fTacV8shZ6">
+  <a href="https://v1.meluiz.com">
     <img src="https://i.imgur.com/rSfbHTj.png" width="128">
   </a>
 </p>
@@ -29,9 +29,6 @@ O site é composto por duas seções e uma única página:
   </a>
   <a aria-label="Typescript logo" href="https://www.typescriptlang.org/">
     <img alt="" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
-  </a>
-  <a aria-label="Discord Server" href="https://discord.gg/fTacV8shZ6">
-    <img alt="" src="https://img.shields.io/badge/meluiz-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white">
   </a>
   <a aria-label="Styled Components Logo" href="https://styled-components.com/">
     <img alt="" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">

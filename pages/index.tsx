@@ -69,7 +69,7 @@ export default function Home({ repos }) {
               </div>
             </Grid>
           </Column>
-          <Column style={{ backgroundColor: '#0a0806' }}>
+          <Column styles={{ backgroundColor: '#0a0806' }}>
             <Grid gap={0}>
               <Column>
                 <CardOpacityEffect>

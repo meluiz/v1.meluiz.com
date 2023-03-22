@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components'
 
 interface AreaProps {
-  fluid?: boolean;
-  size?: string;
+  fluid?: boolean
+  size?: string
 }
 
 interface GridLayoutProps {
-  column?: boolean;
-  responsive?:boolean;
-  align?: 'left' | 'center' | 'right';
-  justify?: 'left' | 'center' | 'right' | 'between';
+  column?: boolean
+  responsive?: boolean
+  align?: 'left' | 'center' | 'right'
+  justify?: 'left' | 'center' | 'right' | 'between'
+}
+
+interface ColumnProps {
+  sticky?: boolean
 }
 
 export const Base = styled.div`
@@ -20,7 +24,7 @@ export const Base = styled.div`
   overflow: hidden;
   overflow-y: auto;
   padding-bottom: 18px;
-  background: ${props => props.theme.colors.background.main};
+  background: ${(props) => props.theme.colors.background.main};
 
   &::after {
     content: '';
@@ -30,14 +34,15 @@ export const Base = styled.div`
     top: 0; left: 0;
     pointer-events: none;
     user-select: none;
-    box-shadow: ${props => props.theme.colors.shadow};
+    box-shadow: ${(props) => props.theme.colors.shadow};
   }
 `
 
 export const Area = styled.div<AreaProps>`
   width: 100%;
-  max-width: ${(props) => props.size ? props.theme.screens[props.size] : props.theme.screens.lg};
-  ${props => props.fluid && 'height: 100%;'}
+  max-width: ${(props) =>
+    props.size ? props.theme.screens[props.size] : props.theme.screens.lg};
+  ${(props) => props.fluid && 'height: 100%;'}
   display: block;
   padding: 0 24px;
   margin: 0 auto;
@@ -46,10 +51,9 @@ export const Area = styled.div<AreaProps>`
 
 export const GridLayout = styled.div<GridLayoutProps>`
   display: flex;
-  flex-direction: ${props => props.responsive ?
-    props.column ? 'row' : 'column'
-  : props.column ? 'column' : 'row'};
-  align-items: ${ (props) => {
+  flex-direction: ${(props) =>
+    props.responsive ? (props.column ? 'row' : 'column') : props.column ? 'column' : 'row'};
+  align-items: ${(props) => {
     switch (props.align) {
       case 'left':
         return 'flex-start'
@@ -61,7 +65,7 @@ export const GridLayout = styled.div<GridLayoutProps>`
         return 'flex-start'
     }
   }};
-  justify-content:  ${ (props) => {
+  justify-content:  ${(props) => {
     switch (props.justify) {
       case 'left':
         return 'flex-start'
@@ -77,17 +81,26 @@ export const GridLayout = styled.div<GridLayoutProps>`
   }};
   gap: var(--gap);
 
-  @media (min-width: ${props => props.theme.screens.lg}) {
-    flex-direction: ${props => props.responsive ?
-      props.column ? 'column' : 'row'
-    : props.column ? 'column' : 'row'};
+  @media (min-width: ${(props) => props.theme.screens.lg}) {
+    flex-direction: ${(props) =>
+      props.responsive ? (props.column ? 'column' : 'row') : props.column ? 'column' : 'row'};
   }
 `
 
-export const ColumnLayout = styled.div`
+export const ColumnLayout = styled.div<ColumnProps>`
   max-width: 100%;
   flex: var(--flex);
-  position: relative;
+  ${(props) => {
+    if (props.sticky) {
+      return `
+        position: sticky;
+        top: 32px;
+        left: 0;
+      `
+    }
+
+    return `position: relative;`
+  }}
 `
 
 export const DribbbleLink = styled.a`
@@ -103,6 +116,7 @@ export const DribbbleLink = styled.a`
   background: rgb(234,76,137);
   box-shadow: 0 3px 4px rgba(0,0,0,.3);
   animation: bounce 1s infinite;
+  z-index: 20;
 
   @keyframes bounce {
     0%, 100% {
